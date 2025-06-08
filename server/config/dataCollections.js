@@ -1,4 +1,4 @@
-import connectDB from './firebase'
+import connectDB from './firebase.js'
 
 export const getUserCollection = async () => {
     const db = await connectDB();

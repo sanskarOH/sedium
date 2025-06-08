@@ -1,7 +1,7 @@
 
-import {initalizeApp} from "firebase/app"
+import {initializeApp} from "firebase/app"
 import {getFirestore} from 'firebase/firestore'
-require('dotenv').config();
+import 'dotenv/config'
 
 const firebaseConfig = {
     apiKey: process.env.apiKey,
@@ -12,13 +12,13 @@ const firebaseConfig = {
     appId: process.env.appId,
     measurementId: process.env.measurementId
 }
-
+let db = null;
 // const firebaseApp = initalizeApp(firebaseConfig);
 // const db = getFirestore(firebaseApp);
 // export {db}
 
 async function intializeClient() {
-    const client = initalizeApp(firebaseConfig);
+    const client = initializeApp(firebaseConfig);
     const db = getFirestore(client);
     return db;
 
